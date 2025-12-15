@@ -112,10 +112,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
 export PATH=/opt/jdk-21.0.7+6/bin:$PATH
-
-
-
-
 export PATH="$HOME/.local/share/gem/ruby/3.1.0/bin:$PATH"
 export PYTHONPATH=/home/d1533/.sage/local/lib/python3.11/site-packages:$PYTHONPATH
