@@ -158,17 +158,33 @@ bindsym $mod+r mode "resize"
 bar {
         # status_command i3status -c ~/dotfiles/i3/i3status.conf
         status_command i3blocks -c ~/dotfiles/i3/i3blocks/config
-        workspace_buttons yes
-        font pango:monospace 10
+        # workspace_buttons yes
+        font pango:monospace 11
+        separator_symbol "┃"
+        height 28
     }
 
 gaps inner 2
-gaps outer 4 
+gaps outer 8 
 default_border pixel 1 
 hide_edge_borders smart
-#for_window [class="^.*"] border pixel 0
-client.focused          #7FFF5F #1E1E2E #FFFFFF #7FFF5F #7FFF5F
-client.unfocused        #5DADE2 #1E1E2E #FFFFFF #5DADE2 #5DADE2
+
+
+# Always show borders, even for single windows
+
+# Thin pixel borders
+default_border pixel 1
+# Window colors (border background text indicator child_border)
+client.focused          #C0C0C0 #1D1F21 #FFFFFF #C0C0C0 #C0C0C0
+client.unfocused        #C0C0C0 #1D1F21 #AAAAAA #C0C0C0 #C0C0C0
+client.urgent           #BF616A #1D1F21 #FFFFFF #BF616A #BF616A
+client.placeholder      #4C566A #1D1F21 #FFFFFF #4C566A #4C566A
+client.focused_inactive #333333 #ffffff #ffffff #484e50   #5f676a
+
+
+
+
+
 
 
 

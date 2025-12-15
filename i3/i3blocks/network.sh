@@ -9,11 +9,8 @@ IP=$(ip -4 addr show "$IF" | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 if [ -n "$IP" ]; then
     echo "E: $IP "
     echo ""
-    echo ""
-    echo "#a3be8c"   # green
 else
     echo "E: down"
-    echo ""
     echo ""
     echo "#bf616a"   # red
 fi

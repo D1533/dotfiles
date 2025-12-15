@@ -33,6 +33,5 @@ fi
 # Output
 echo " CPU ${USAGE}% "
 echo ""
-echo ""
 echo "$COLOR"
 

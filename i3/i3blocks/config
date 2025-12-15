@@ -1,4 +1,7 @@
 
+[global]
+separator=""
+
 [network]
 command=~/dotfiles/i3/i3blocks/network.sh
 interval=1
@@ -23,6 +26,7 @@ interval=5
 [volume]
 command=~/dotfiles/i3/i3blocks/volume.sh
 interval=1
+signal=10
 
 [time]
 command=~/dotfiles/i3/i3blocks/time.sh

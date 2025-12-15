@@ -16,6 +16,5 @@ fi
 
 echo " $SYMBOL $CAPACITY% "
 echo ""
-echo ""
 echo "$COLOR"
 
