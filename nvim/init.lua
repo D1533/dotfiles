@@ -109,6 +109,9 @@ vim.opt.expandtab = true
 vim.opt.wrap = false
 vim.opt.cursorline = true
 
+vim.o.timeoutlen = 200
+vim.o.ttimeoutlen = 10
+
 -- ===== Keymaps =====
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
