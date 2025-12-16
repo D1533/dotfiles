@@ -25,8 +25,13 @@ interval=5
 
 [volume]
 command=~/dotfiles/i3/i3blocks/volume.sh
-interval=1
-signal=10
+interval=once
+signal=1
+
+[microphone]
+command=~/dotfiles/i3/i3blocks/microphone.sh
+interval=once
+signal=2
 
 [time]
 command=~/dotfiles/i3/i3blocks/time.sh

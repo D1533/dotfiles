@@ -1,22 +1,31 @@
 #!/bin/bash
 
-# Get the line containing the volume and mute info for Master
-LINE=$(amixer get Master | grep -E -o 'Front Left:.*' | tail -n1)
+# Handle mouse clicks
+case "$BLOCK_BUTTON" in
+    1) amixer -q set Master 5%+ ;;
+    3) amixer -q set Master 5%- ;;
+    2) amixer -q set Master toggle ;;
+esac
 
-# Extract volume (number before %)
+# Force instant refresh (must match signal in i3blocks config)
+pkill -RTMIN+10 i3blocks 2>/dev/null
+
+# Get last Front Left line
+LINE=$(amixer get Master | grep -E 'Front Left' | tail -n1)
+
+# Extract volume and mute
 VOL=$(echo "$LINE" | awk -F'[][]' '{print $2+0}')
-
-# Extract mute status (on/off)
 MUTED=$(echo "$LINE" | awk -F'[][]' '{print $4}')
 
+# Clamp volume
+[ $VOL -gt 100 ] && VOL=100
+
+# Output for i3blocks
 if [ "$MUTED" = "off" ]; then
     echo " Vol muted "
-    echo ""
+    echo
     echo "#F9E79F"
 else
-    [ $VOL -gt 100 ] && VOL=100
     echo " Vol $VOL% "
-    echo ""
-    echo "#a3be8c"
 fi
 
