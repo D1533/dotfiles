@@ -4,6 +4,7 @@
 
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 
+
 -- ==== Plugins ====
 require("lazy").setup({
   -- LSP for C/C++
@@ -25,37 +26,19 @@ require("lazy").setup({
     "romainl/vim-cool",
     event = "CmdlineEnter",  -- lazy-load when entering search or command-line mode
   },
-  -- ColorSchemes 
-  --Tokyo Night
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   config = function()
-  --     vim.g.tokyonight_style = "moon"
-  --     vim.g.tokyonight_transparent = false 
-  --     vim.g.tokyonight_italic_comments = false 
-  --     vim.g.tokyonight_italic_keywords = false
-  --     
-  --     vim.cmd("colorscheme tokyonight")
-  -- end
-  -- },
-   
-  -- Kanagawa colorscheme
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   config = function()
-  --     require("kanagawa").setup({
-  --       compile = true,
-  --       undercurl = true,
-  --       commentStyle = { italic = true },
-  --       keywordStyle = { italic = true },
-  --       statementStyle = { bold = true },
-  --       transparent = false,
-  --     })
-  --     vim.cmd("colorscheme kanagawa")
-  --   end
-  -- },
- 
-  -- File Explorer
+ -- ColorSchemes 
+--Tokyo Night
+  {
+    "folke/tokyonight.nvim",
+    config = function()
+      vim.g.tokyonight_transparent = false 
+      vim.g.tokyonight_italic_comments = false 
+      vim.g.tokyonight_italic_keywords = false
+      
+      vim.cmd("colorscheme tokyonight-storm")
+  end
+  },
+  -- FileExplorer 
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = "nvim-tree/nvim-web-devicons",
@@ -105,6 +88,7 @@ require("lazy").setup({
 -- ===== Editor Settings =====
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.opt.termguicolors = true
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -124,6 +108,13 @@ vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
+
+vim.cmd("hi Normal guibg=#000000 ctermbg=0")
+vim.cmd("hi NormalNC guibg=#000000 ctermbg=0")
+vim.cmd("hi NormalFloat guibg=#000000 ctermbg=0")
+vim.cmd("hi VertSplit guibg=#000000 ctermbg=0")
+vim.cmd("hi StatusLine guibg=#000000 ctermbg=0")
+vim.cmd("hi SignColumn guibg=#000000 ctermbg=0")
 -- ===== CMP (Autocomplete) =====
 local cmp = require("cmp")
 cmp.setup({

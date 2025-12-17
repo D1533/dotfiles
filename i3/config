@@ -184,7 +184,7 @@ bar {
     }
 
 gaps inner 4
-gaps outer 6
+gaps outer 3
 for_window [class="^.*"] border pixel 1 
 # hide_edge_borders smart
 
@@ -208,29 +208,9 @@ client.focused #888888 #1D1F21 #FFFFFF #888888 #888888
 
 
 # Startup commands
-exec_always --no-startup-id xsetroot -solid "#1d0554"
+exec_always --no-startup-id xsetroot -solid "#000000"
 exec --no-startup-id set _JAVA_AWT_WM_NONREPARENTING=1
 exec --no-startup-id xrandr --output eDP-1 --primary --auto
 exec --no-startup-id xrandr --output HDMI-1 --auto --above eDP-1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
