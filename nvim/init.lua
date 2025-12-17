@@ -36,20 +36,20 @@ require("lazy").setup({
   -- },
    
   -- Kanagawa colorscheme
-  {
-    "rebelot/kanagawa.nvim",
-    config = function()
-      require("kanagawa").setup({
-        compile = true,
-        undercurl = true,
-        commentStyle = { italic = true },
-        keywordStyle = { italic = true },
-        statementStyle = { bold = true },
-        transparent = false,
-      })
-      vim.cmd("colorscheme kanagawa")
-    end
-  },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   config = function()
+  --     require("kanagawa").setup({
+  --       compile = true,
+  --       undercurl = true,
+  --       commentStyle = { italic = true },
+  --       keywordStyle = { italic = true },
+  --       statementStyle = { bold = true },
+  --       transparent = false,
+  --     })
+  --     vim.cmd("colorscheme kanagawa")
+  --   end
+  -- },
  
   -- File Explorer
   {

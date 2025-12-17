@@ -172,21 +172,23 @@ bar {
         height 28
     }
 
-gaps inner 2
+gaps inner 4
 gaps outer 8
-for_window [class="^.*"] border pixel 0
-hide_edge_borders smart
+for_window [class="^.*"] border pixel 1 
+# hide_edge_borders smart
 
 
 # Always show borders, even for single windows
 
 # Thin pixel borders
 # Window colors (border background text indicator child_border)
-client.focused          #C0C0C0 #1D1F21 #FFFFFF #C0C0C0 #C0C0C0
-client.unfocused        #C0C0C0 #1D1F21 #AAAAAA #C0C0C0 #C0C0C0
-client.urgent           #BF616A #1D1F21 #FFFFFF #BF616A #BF616A
-client.placeholder      #4C566A #1D1F21 #FFFFFF #4C566A #4C566A
-client.focused_inactive #333333 #ffffff #ffffff #484e50   #5f676a
+
+client.focused #888888 #1D1F21 #FFFFFF #888888 #888888
+
+#client.unfocused        #C0C0C0 #1D1F21 #AAAAAA #C0C0C0 #C0C0C0
+#client.urgent           #BF616A #1D1F21 #FFFFFF #BF616A #BF616A
+#client.placeholder      #4C566A #1D1F21 #FFFFFF #4C566A #4C566A
+#client.focused_inactive #333333 #ffffff #ffffff #484e50   #5f676a
 
 
 
