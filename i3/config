@@ -196,5 +196,5 @@ client.focused_inactive #333333 #ffffff #ffffff #484e50   #5f676a
 
 # Startup commands
 exec_always --no-startup-id xsetroot -solid "#1d0554"
-
+exec --no-startup-id set _JAVA_AWT_WM_NONREPARENTING=1
 
