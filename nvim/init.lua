@@ -20,7 +20,11 @@ require("lazy").setup({
       require("Comment").setup()
     end
   },
-
+  -- VimCool (no highlight after search)
+  {
+    "romainl/vim-cool",
+    event = "CmdlineEnter",  -- lazy-load when entering search or command-line mode
+  },
   -- ColorSchemes 
   --Tokyo Night
   -- {
@@ -114,6 +118,7 @@ vim.o.ttimeoutlen = 10
 
 -- ===== Keymaps =====
 vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("c", "jk", "<C-c>")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
