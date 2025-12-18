@@ -28,16 +28,16 @@ require("lazy").setup({
   },
   -- ColorSchemes 
   --Tokyo Night
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   config = function()
-  --     vim.g.tokyonight_transparent = false 
-  --     vim.g.tokyonight_italic_comments = false 
-  --     vim.g.tokyonight_italic_keywords = false
-  --     
-  --     vim.cmd("colorscheme tokyonight-night")
-  -- end
-  -- },
+  {
+    "folke/tokyonight.nvim",
+    config = function()
+      vim.g.tokyonight_transparent = false 
+      vim.g.tokyonight_italic_comments = false 
+      vim.g.tokyonight_italic_keywords = false
+      
+      vim.cmd("colorscheme tokyonight-night")
+  end
+  },
 -- {
 --   "rebelot/kanagawa.nvim",
 --   config = function()
@@ -53,23 +53,23 @@ require("lazy").setup({
 --       variablebuiltinStyle = { italic = true },
 --       specialReturn = true,
 --       specialException = true,
---       transparent = false,   -- false = normal background
+--       transparent = true,   -- false = normal background
 --       dimInactive = false,
 --     })
 --     -- Set colorscheme
 --     vim.cmd("colorscheme kanagawa") -- you can also try kanagawa-dragon or kanagawa-lotus
 --   end
 -- },
-{
-  "aktersnurra/no-clown-fiesta.nvim",
-  config = function()
-    -- optional: set variant
-    vim.g.ncf_variant = "dark" -- or "dark", default is "dark"
-
-    -- apply colorscheme
-    vim.cmd("colorscheme no-clown-fiesta")
-  end,
-},
+-- {
+--   "aktersnurra/no-clown-fiesta.nvim",
+--   config = function()
+--     -- optional: set variant
+--     vim.g.ncf_variant = "dark" -- or "dark", default is "dark"
+--
+--     -- apply colorscheme
+--     vim.cmd("colorscheme no-clown-fiesta")
+--   end,
+-- },
   -- FileExplorer 
   {
     "nvim-tree/nvim-tree.lua",
