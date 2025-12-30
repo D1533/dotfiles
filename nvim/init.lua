@@ -24,20 +24,59 @@ require("lazy").setup({
   -- VimCool (no highlight after search)
   {
     "romainl/vim-cool",
-    event = "CmdlineEnter",  -- lazy-load when entering search or command-line mode
+    event = "CmdlineEnter",  
   },
-  -- ColorSchemes 
-  --Tokyo Night
   {
-    "folke/tokyonight.nvim",
-    config = function()
-      vim.g.tokyonight_transparent = false 
-      vim.g.tokyonight_italic_comments = false 
-      vim.g.tokyonight_italic_keywords = false
-      
-      vim.cmd("colorscheme tokyonight-night")
-  end
+    "christoomey/vim-tmux-navigator",
+    lazy = false, 
   },
+
+  -- ColorSchemes 
+-- {
+--   "sainnhe/everforest",
+--   lazy = false,
+--   priority = 1000, -- make sure it loads first
+--   config = function()
+--     -- Style options (keep it clean)
+--     vim.g.everforest_background = "hard"   -- hard | medium | soft
+--     vim.g.everforest_enable_italic = 0
+--     vim.g.everforest_disable_italic_comment = 1
+--     vim.g.everforest_transparent_background = 1
+--
+--     vim.cmd("colorscheme everforest")
+--   end,
+-- },
+{
+  "arcticicestudio/nord-vim",
+  lazy = false,
+  priority = 1000,  -- load before other plugins
+  config = function()
+    vim.g.nord_contrast = "hard"          -- hard | soft | none
+    vim.g.nord_borders = true             -- adds border to splits
+    vim.g.nord_disable_background = false -- false = use dark background
+    vim.g.nord_italic = false             -- disable italics
+    vim.g.nord_bold = false               -- disable bold
+
+    vim.cmd("colorscheme nord")
+  end,
+},
+
+
+
+
+
+
+  --Tokyo Night
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   config = function()
+  --     vim.g.tokyonight_transparent = true 
+  --     vim.g.tokyonight_italic_comments = false 
+  --     vim.g.tokyonight_italic_keywords = false
+  --     
+  --     vim.cmd("colorscheme tokyonight-night")
+  -- end
+  -- },
 -- {
 --   "rebelot/kanagawa.nvim",
 --   config = function()
@@ -132,21 +171,18 @@ vim.opt.cursorline = true
 vim.o.timeoutlen = 200
 vim.o.ttimeoutlen = 10
 
+-- Black Background
+vim.cmd("hi Normal guibg=#0F1419 ctermbg=0")
+vim.cmd("hi NormalNC guibg=#0F1419 ctermbg=0")
+vim.cmd("hi NormalFloat guibg=#0F1419 ctermbg=0")
+vim.cmd("hi VertSplit guibg=#0F1419 ctermbg=0")
+vim.cmd("hi StatusLine guibg=#0F1419 ctermbg=0")
+vim.cmd("hi SignColumn guibg=#0F1419 ctermbg=0")
+
 -- ===== Keymaps =====
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("c", "jk", "<C-c>")
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
 
-
-vim.cmd("hi Normal guibg=#000000 ctermbg=0")
-vim.cmd("hi NormalNC guibg=#000000 ctermbg=0")
-vim.cmd("hi NormalFloat guibg=#000000 ctermbg=0")
-vim.cmd("hi VertSplit guibg=#000000 ctermbg=0")
-vim.cmd("hi StatusLine guibg=#000000 ctermbg=0")
-vim.cmd("hi SignColumn guibg=#000000 ctermbg=0")
 -- ===== CMP (Autocomplete) =====
 local cmp = require("cmp")
 cmp.setup({
