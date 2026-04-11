@@ -7,29 +7,29 @@ vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 
 -- ==== Plugins ====
 require("lazy").setup({
-  -- LSP for C/C++
-  { "neovim/nvim-lspconfig" },
+    -- LSP for C/C++
+    { "neovim/nvim-lspconfig" },
 
-  -- Autocomplete engine
-  { "hrsh7th/nvim-cmp" },
-  { "hrsh7th/cmp-nvim-lsp" },
+    -- Autocomplete engine
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
 
-  -- Comments
-  {
+    -- Comments
+    {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup()
     end
-  },
-  -- VimCool (no highlight after search)
-  {
+    },
+    -- VimCool (no highlight after search)
+    {
     "romainl/vim-cool",
     event = "CmdlineEnter",  
-  },
-  {
+    },
+    {
     "christoomey/vim-tmux-navigator",
     lazy = false, 
-  },
+    },
 
   -- ColorSchemes 
 -- {
@@ -46,25 +46,20 @@ require("lazy").setup({
 --     vim.cmd("colorscheme everforest")
 --   end,
 -- },
-{
-  "arcticicestudio/nord-vim",
-  lazy = false,
-  priority = 1000,  -- load before other plugins
-  config = function()
-    vim.g.nord_contrast = "hard"          -- hard | soft | none
-    vim.g.nord_borders = true             -- adds border to splits
-    vim.g.nord_disable_background = false -- false = use dark background
-    vim.g.nord_italic = false             -- disable italics
-    vim.g.nord_bold = false               -- disable bold
+    {
+      "arcticicestudio/nord-vim",
+      lazy = false,
+      priority = 1000,  -- load before other plugins
+      config = function()
+        vim.g.nord_contrast = "hard"          -- hard | soft | none
+        vim.g.nord_borders = true             -- adds border to splits
+        vim.g.nord_disable_background = false -- false = use dark background
+        vim.g.nord_italic = false             -- disable italics
+        vim.g.nord_bold = false               -- disable bold
 
-    vim.cmd("colorscheme nord")
-  end,
-},
-
-
-
-
-
+        vim.cmd("colorscheme nord")
+      end,
+    },
 
   --Tokyo Night
   -- {
@@ -98,16 +93,6 @@ require("lazy").setup({
 --     -- Set colorscheme
 --     vim.cmd("colorscheme kanagawa") -- you can also try kanagawa-dragon or kanagawa-lotus
 --   end
--- },
--- {
---   "aktersnurra/no-clown-fiesta.nvim",
---   config = function()
---     -- optional: set variant
---     vim.g.ncf_variant = "dark" -- or "dark", default is "dark"
---
---     -- apply colorscheme
---     vim.cmd("colorscheme no-clown-fiesta")
---   end,
 -- },
   -- FileExplorer 
   {
@@ -216,4 +201,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "python" },
+  callback = function()
+    vim.lsp.start({
+      name = "pyright",
+      cmd = { "pyright-langserver", "--stdio" },
+      capabilities = capabilities,
+    })
+  end,
+})
 
